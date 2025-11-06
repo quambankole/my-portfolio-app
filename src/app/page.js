@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import Header from "../components/header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
+import { motion, scale } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -20,28 +20,28 @@ export default function Home() {
       <Header/>
 
       <main>
-        <section id="home" className="bg-white border border-red-600 flex items-center justify-center lg:h-[62vh] w-full">
+        <section id="home" className="bg-white border border-red-600 flex items-center justify-center lg:h-[60vh] w-full">
 
-        <div className="flex flex-col items-left space-y-3 max-w-screen-lg lg:w-[42vw] mx-auto md:py-18">
+        <div className="lg:auto lg:mt-5 flex flex-col items-left space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
 
           <div>
             <motion.h1
-              className="lg:text-4xl lg:w-[40vw] md:text-5xl md:w-[45vw] sm:text-5xl font-light tracking-wider uppercase text-gray-300 text-left"
-              initial={{ color: "#d7d9dbff" }}
-              animate={{ color: "#282a2dff" }}
+              className="lg:text-3xl lg:w-[49vw] md:text-5xl md:w-[45vw] sm:text-5xl font-light tracking-wider uppercase text-gray-300 text-left"
+              initial={{ color: "#d7d9dbff", scaleY: 0.9 }}
+              animate={{ color: "#282a2dff", scaleY: 1 }}
               transition={{ duration: 1.2, ease: 'easeInOut' }}>
               Hi, I’m Quam.
             </motion.h1>
           </div>
 
           <div>
-            <h2 className="lg:text-5xl lg:py-2 lg:pl-6 lg:w-[46vw] sm:text-3xl md:w-[45vw] md:text-5xl border-1 border-solid uppercase text-black tracking-wider text-right" >
+            <h2 className="lg:text-5xl lg:pb-2 lg:pl-6 lg:w-[49vw] sm:text-3xl md:w-[45vw] md:text-5xl uppercase text-black tracking-wider text-right" >
               <span className="block">I build modern</span>
               <span className="block">web experiences</span>
             </h2>
           </div>
 
-          <div className="lg:border-2 lg:border-solid flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-[46vw] md:w-[45vw] sm:w-full gap-2 md:text-[0.25rem] ">
+          <div className="lg:border-b-1 border-green-300 lg:border-solid flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-[49vw] md:w-[45vw] sm:w-full gap-2 md:text-[0.25rem] ">
 
 
             <span className="uppercase font-medium flex items-center gap-x-2 p-2 text-black backdrop-blur-lg border-black/10 bg-white/30 text-xs md:text-[10px] lg:text-sm">
@@ -54,14 +54,13 @@ export default function Home() {
             </span>
 
 
-
             <span className="uppercase font-medium flex items-center gap-x-2 p-2 text-black backdrop-blur-lg border-black/10 bg-white/30 text-xs md:text-[10px] lg:text-sm"
                 aria-label="Status: Open to work">
                 <span
                   className={`${styles.statusDot} inline-block w-2 h-2 bg-green-500 rounded-full`}
                   aria-hidden="true"
                 ></span>
-                <span>Open to work</span>
+                <span>Available</span>
             </span>
           </div>
 
@@ -79,7 +78,7 @@ export default function Home() {
                   <li>
                     <a href="#resume" className={`${styles.cta} text-base border border-black/20 font-large rounded-xl text-black hover:text-green-600 hover:scaletransition-colors ring-1 ring-white/20
                         bg-white/50 backdrop-blur-md shadow-lg py-1.5 px-3 uppercase`}>
-                      Resume
+                      Resume´
                     </a>
                   </li>
                 </ul>
@@ -94,7 +93,7 @@ export default function Home() {
         </section>
 
         {/* #ABOUTSECTION */}
-        <section id="about" className="min-h-screen scroll-mt-24">
+        <section id="about" className="lg:h-auto lg:m-2 scroll-mt-24">
           <About/>
         </section>
 

@@ -5,8 +5,8 @@ import styles from './page.module.css';
 import Header from "../components/header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { motion, scale } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, scale, useInView } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 
 export default function Home() {
   const [blurOn, setBlurOn] = useState(false);
@@ -15,21 +15,25 @@ export default function Home() {
     return () => clearTimeout(t);
   }, []);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <>
       <Header/>
 
       <main>
-        <section id="home" className="bg-white border border-red-600 flex items-center justify-center lg:h-[60vh] w-full">
+        <section id="home" className="bg-white border border-red-600 flex items-center justify-center lg:h-[76vh] w-full">
 
         <div className="lg:auto lg:mt-5 flex flex-col items-left space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
 
           <div>
             <motion.h1
+              ref={ref}
               className="lg:text-3xl lg:w-[49vw] md:text-5xl md:w-[45vw] sm:text-5xl font-light tracking-wider uppercase text-gray-300 text-left"
-              initial={{ color: "#d7d9dbff", scaleY: 0.9 }}
-              animate={{ color: "#282a2dff", scaleY: 1 }}
-              transition={{ duration: 1.2, ease: 'easeInOut' }}>
+              initial={{ color: "#d7d9dbff", scale: 0.9,  x:-150 }}
+              animate={isInView ? { color: "#282a2dff", x:-50}: {}}
+              transition={{ duration: 1.5, ease: 'easeInOut' }}>
               Hi, I’m Quam.
             </motion.h1>
           </div>
@@ -97,14 +101,14 @@ export default function Home() {
           <About/>
         </section>
 
-        <section id="projects" className="min-h-screen scroll-mt-24">
+        {/* <section id="projects" className="min-h-screen scroll-mt-24">
           <h1>Projects</h1>
         </section>
 
         <section id="contact" className="min-h-screen scroll-mt-24">
           <h1>Contact</h1>
         </section>
-
+ */}
 
       </main>
 

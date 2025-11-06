@@ -1,0 +1,71 @@
+
+
+.nav {
+--color: #000000;
+background: rgba(254, 254, 0, 0.938);
+width: 2rem;
+height: 2.5rem;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 10;
+border: 2px solid rgba(222, 21, 21, 0.3);
+backdrop-filter: blur(10px) saturate(180%);
+-webkit-backdrop-filter: blur(10px) saturate(180%);
+border-radius: 0.5rem;
+box-shadow: 0 4px 30px rgba(169, 68, 68, 0.1);
+}
+
+.nav svg {
+fill: none;
+stroke: var(--color);
+stroke-width: 7.5px;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+.nav svg use:nth-of-type(1) {
+opacity: 1;
+stroke-dashoffset: 221;
+stroke-dasharray: 46 249;
+transition: stroke-dashoffset .12s linear .2s, stroke-dasharray .12s linear .2s, opacity 0s linear .2s;
+}
+
+.nav svg use:nth-of-type(2) {
+animation: stroke-animation-reverse 1.2s ease-out forwards;
+}
+
+.nav input {
+position: absolute;
+height: 100%;
+width: 100%;
+z-index: 10;
+cursor: pointer;
+opacity: 0;
+}
+
+.nav input:checked + svg use:nth-of-type(1) {
+stroke-dashoffset: 175;
+stroke-dasharray: 0 295;
+opacity: 0;
+transition: stroke-dashoffset .07s linear .07s, stroke-dasharray .07s linear .07s, opacity 0s linear .14s;
+}
+
+.nav input:checked + svg use:nth-of-type(2) {
+animation: stroke-animation 1.2s ease-out forwards;
+}
+
+@keyframes stroke-animation {
+0% { stroke-dashoffset: 295; stroke-dasharray: 25 270; }
+50% { stroke-dashoffset: 68; stroke-dasharray: 59 236; }
+65% { stroke-dashoffset: 59; stroke-dasharray: 59 236; }
+100% { stroke-dashoffset: 68; stroke-dasharray: 59 236; }
+}
+
+@keyframes stroke-animation-reverse {
+0% { stroke-dashoffset: 68; stroke-dasharray: 59 236; }
+50% { stroke-dashoffset: 290; stroke-dasharray: 25 270; }
+65% { stroke-dashoffset: 295; stroke-dasharray: 25 270; }
+100% { stroke-dashoffset: 290; stroke-dasharray: 25 270; }
+}

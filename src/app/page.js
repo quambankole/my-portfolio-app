@@ -1,5 +1,5 @@
 'use client';
-import Image from "next/image";
+
 import About from "./about/page";
 import styles from './page.module.css';
 import Header from "../components/header";

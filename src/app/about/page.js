@@ -1,17 +1,53 @@
     'use client';
 
     import { motion, useInView } from "framer-motion";
-    import { useRef } from "react";
+    import { useEffect, useRef } from "react";
 
     export default function About() {
     const textRef = useRef(null);
-    const textInView = useInView(textRef, { once: true, margin: "-200px" });
+    const textInView = useInView(textRef, { once: true, margin: "-110px" });
 
     const listRef = useRef(null);
-    const listInView = useInView(listRef, { once: true, margin: "-200px" });
+    const listInView = useInView(listRef, { once: true, margin: "-110px" });
+
+
+    useEffect(() => {
+        const onWheel = (e) => {
+        if (window.scrollY <= 0 && e.deltaY < 0) {
+            e.preventDefault();
+            window.scrollTo(0, 0);
+        }
+        };
+
+        let startY = null;
+        const onTouchStart = (e) => {
+        startY = e.touches[0].clientY;
+        };
+
+        const onTouchMove = (e) => {
+        if (window.scrollY <= 0 && startY !== null) {
+            const currentY = e.touches[0].clientY;
+            // User is pulling down (which would scroll up beyond top)
+            if (currentY > startY) {
+            e.preventDefault();
+            window.scrollTo(0, 0);
+            }
+        }
+        };
+
+        window.addEventListener('wheel', onWheel, { passive: false });
+        window.addEventListener('touchstart', onTouchStart, { passive: true });
+        window.addEventListener('touchmove', onTouchMove, { passive: false });
+
+        return () => {
+        window.removeEventListener('wheel', onWheel);
+        window.removeEventListener('touchstart', onTouchStart);
+        window.removeEventListener('touchmove', onTouchMove);
+        };
+    }, []);
 
     return (
-    <main>
+    <main className="overscroll-contain">
         <section
         id="about"
         role="region"
@@ -22,7 +58,7 @@
             <motion.h1
             id="about-heading"
             className="lg:text-3xl lg:my-10 md:text-2xl font-medium tracking-widest uppercase text-white mb-4 border-l-1 border-green-400 pl-2"
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             >
@@ -31,7 +67,7 @@
 
             <motion.p
             ref={textRef}
-            className="lg:text-xl lg:mb-1 font-arial font-light text-center text-white-700 leading-relaxed md:text-lg"
+            className="lg:text-xl lg:mb-1 font-helvetica font-light text-justify text-white leading-relaxed md:text-lg indent-4"
             initial={{ opacity: 0, y: 40 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -68,14 +104,14 @@
             </div>
             </motion.div>
 
-            <div className="mt-10">
+            {/* <div className="mt-10">
             <a
                 href="#projects"
                 className="inline-block border border-black/20 rounded-lg py-2 px-4 uppercase text-sm hover:text-green-600 bg-white/80 shadow-sm transition-colors"
             >
                 View Projects
             </a>
-            </div>
+            </div> */}
         </div>
         </section>
     </main>

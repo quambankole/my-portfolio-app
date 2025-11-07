@@ -3,17 +3,19 @@
   padding: 1em;
   text-align: center;
   font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+
 }
 
 .navbar{
   font-family: "DM Mono", Arial, Helvetica, sans-serif;
-  position: static;
+  position: sticky;
   margin-left: auto;
   /* Use transitions for a smooth reveal */
   opacity: 0;
   transform: translateX(20px);
   pointer-events: none;
   transition: opacity 0.5s ease-in, transform 0.5s ease-out;
+
 }
 
 .open {

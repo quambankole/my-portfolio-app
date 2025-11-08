@@ -57,11 +57,10 @@
         <div className="flex flex-col items-start space-y-3 max-w-screen-lg w-full lg:w-[50vw] mx-auto px-6">
             <motion.h1
             id="about-heading"
-            className="lg:text-3xl lg:my-10 md:text-2xl font-medium tracking-widest uppercase text-white mb-4 border-l-1 border-green-400 pl-2"
+            className="lg:text-3xl lg:my-10 md:text-2xl font-bold tracking-widest uppercase text-white mb-4 border-l-1 border-green-400 pl-2"
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            >
+            transition={{ duration: 1, ease: "easeOut" }}>
             About me
             </motion.h1>
 
@@ -77,30 +76,30 @@
 
             <motion.div
             ref={listRef}
-            className="grid md:grid-cols-2 gap-6 mt-8"
+            className="grid lg:grid-cols-1 gap-6 mt-8"
             initial={{ opacity: 0, y: 50 }}
             animate={listInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            >
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}>
             <div className="space-y-3 my-3">
-                <h2 className="text-xl font-medium uppercase tracking-wide">What I Do</h2>
-                <ul className="list-disc pl-5 text-gray-400 leading-relaxed text-lg">
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Next.js + React front‑end development</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Tailwind CSS design systems</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">APIs &amp; integrations</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Performance &amp; accessibility</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Automation and IoT system integration</li>
-                </ul>
+                <h2 className="text-xl font-bold uppercase tracking-wide">What I Do</h2>
+                <div className="grid lg:grid-cols-3 text-gray-300 text-lg text-left gap-2">
+                    <div className="cursor-pointer text-gray-300 hover:text-white transition-colors">Front‑end Development</div>
+                    <div className="cursor-pointer text-gray-300 hover:text-white transition-colors">Back‑end Development</div>
+                    <div className="cursor-pointer text-gray-300 hover:text-white transition-colors">APIs &amp; integrations</div>
+                    <div className="cursor-pointer text-gray-300 hover:text-white transition-colors">UI/UX Design Systems</div>
+                    <div className="cursor-pointer text-gray-300 hover:text-white transition-colors">Automation & IoT system </div>
+                    <div className="cursor-pointer text-gray-300 hover:text-white transition-colors">Performance &amp; Accessibility</div>
+                </div>
             </div>
             <div className="space-y-3 my-3">
-                <h2 className="text-xl  font-medium uppercase tracking-wide">Stack</h2>
-                <ul className="list-disc pl-5 text-gray-400 leading-relaxed text-lg">
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">JavaScript / TypeScript</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Next.js, React</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Node.js</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Python</li>
-                <li className="cursor-pointer text-gray-400 hover:text-white transition-colors">Basic AI/agents (in progress)</li>
-                </ul>
+            <h2 className="text-xl font-bold uppercase tracking-wider">Stack</h2>
+            <div className="grid lg:grid-cols-2 text-gray-300 text-lg text-left gap-2">
+                <div className="cursor-pointer text-gray-300 hover:text-white transition-colors"><span className="font-semibold">Front‑End: </span>Next.js, React, JavaScript, TypeScript</div>
+                <div className="cursor-pointer text-gray-300 hover:text-white transition-colors"><span className="font-semibold">Back‑End: </span>Node.js (Express), Python, REST APIs </div>
+                <div className="cursor-pointer text-gray-300 hover:text-white transition-colors"><span className="font-semibold">Databases: </span>SQL (MySQL) &amp; MongoDB</div>
+                <div className="cursor-pointer text-gray-300 hover:text-white transition-colors"><span className="font-semibold">Version Control: </span>Git &amp; GitHub</div>
+                <div className="cursor-pointer text-gray-300 hover:text-white transition-colors"><span className="font-semibold">Others: </span>AI/agents (in progress)</div>
+            </div>
             </div>
             </motion.div>
 

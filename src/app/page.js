@@ -81,7 +81,7 @@ export default function Home() {
                   </div>
                   <div>
                     <a href="#resume" className={`${styles.cta} text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-colors ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400`}>
-                      Résumé
+                      Resumé
                     </a>
                   </div>
                   <div className="sm:ml-auto hover:scale-105 duration-200 ease-out">

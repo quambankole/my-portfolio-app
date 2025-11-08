@@ -78,7 +78,7 @@
             ref={listRef}
             className="grid lg:grid-cols-1 gap-6 mt-8"
             initial={{ opacity: 0, y: 50 }}
-            animate={listInView ? { opacity: 1, y: 0 } : {}}
+            animate={listInView ? { opacity: 1, y: 0} : {}}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}>
             <div className="space-y-3 my-3">
                 <h2 className="text-xl font-bold uppercase tracking-wide">What I Do</h2>

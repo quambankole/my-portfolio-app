@@ -3,9 +3,12 @@
 import About from "./about/page";
 import styles from './page.module.css';
 import Header from "../components/header";
+import Links from "../components/links";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { motion, useInView, useReducedMotion } from "framer-motion";
+import { Particles } from "../components/ui/shadcn-io/particles"
+import { WritingText } from "../components/writing-text/index";
 import { useRef } from "react";
 
 export default function Home() {
@@ -18,16 +21,27 @@ export default function Home() {
       <Header/>
 
       <main>
-        <section id="home" className="bg-white border border-red-600 flex items-center justify-center lg:h-[76vh] w-full">
+        <section
+          id="home"
+          className="relative bg-white border border-red-600 flex items-center justify-center lg:h-[80vh] w-full overflow-hidden"
+        >
+          {/* Background particles */}
+          <Particles
+            className="absolute"
+            quantity={70}
+            ease={0}
+            color="#17ef54ff"
+            refresh
+          />
 
-        <div className="lg:mt-5 flex flex-col items-start space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
+        <div className="absolute z-10 lg:mt-5 flex flex-col items-start space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
 
           <div>
             <motion.h1
               ref={ref}
               className="lg:text-3xl lg:w-[49vw] md:text-5xl md:w-[45vw] sm:text-5xl font-light tracking-wider uppercase text-gray-300 text-left"
-              initial={prefersReducedMotion ? false : { color: "#d7d9dbff", scale: 0.9, x: -50, opacity: 0 }}
-              animate={isInView ? { color: "#282a2dff", x: 0, opacity: 1 } : {}}
+              initial={prefersReducedMotion ? false : { color: "#d7d9dbff", scale: 0.9, x: -60, opacity: 0 }}
+              animate={isInView ? { color: "#282a2dff", x: -30, opacity: 1 } : {}}
               transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.9, ease: "easeOut" }}
             >
               Hi, I’m Quam.
@@ -42,8 +56,16 @@ export default function Home() {
               transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", bounce: 0.1, duration: 1.4 }}
               className="lg:text-5xl lg:pb-2 lg:pl-6 lg:w-[49vw] sm:text-3xl md:w-[45vw] md:text-5xl uppercase text-black tracking-wider text-right"
             >
-              <span className="block">I build modern</span>
-              <span className="block">web experiences</span>
+              <WritingText
+                  text="I build modern web experiences"
+                  inView={true}
+                  transition={{
+                    type: "spring",
+                    bounce: 0,
+                    duration: 3,
+                    delay: 0.3
+                  }}
+                />
             </motion.h2>
           </div>
 
@@ -73,25 +95,23 @@ export default function Home() {
           <div className="lg:w-[49vw] w-[40vw] md:w-[45vw] sm:w-full flex flex-col items-start">
             <div className="flex flex-col gap-2 my-4 md:my-0 md:mx-0 sm:flex-row sm:items-center sm:justify-between lg:items-start w-full">
               <nav aria-label="Primary" className="flex w-full">
-                <div className="flex w-full flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-12 uppercase">
-                  <div>
-                    <a href="#socials" className={`${styles.cta} text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-colors ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400`}>
-                    Links
-                    </a>
-                  </div>
-                  <div>
+                <ul className="flex w-full flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-12 uppercase">
+                  <li>
+                    <Links />
+                  </li>
+                  <li className="hover:scale-105 duration-200 ease-out">
                     <a href="#resume" className={`${styles.cta} text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-colors ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400`}>
                       Resumé
                     </a>
-                  </div>
-                  <div className="sm:ml-auto hover:scale-105 duration-200 ease-out">
+                  </li>
+                  <li className="sm:ml-auto hover:scale-105 duration-200 ease-out">
                     <a
                       href="#getintouch"
                       className={`${styles.cta} text-base font-bold text-white rounded-xl hover:bg-black/10 hover:text-black transition-colors duration-300 ease-in-out border border-black/20 bg-black/90 backdrop-blur-md shadow-lg py-2 px-5 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-400`}>
                       Get in touch
                     </a>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </nav>
             </div>
           </div>
@@ -101,18 +121,18 @@ export default function Home() {
         </section>
 
         {/* #ABOUTSECTION */}
-        <section id="about" className="lg:h-auto lg:m-2 scroll-mt-24">
+        <section id="about" className="lg:h-auto bg-black py-10 scroll-mt-24">
           <About/>
         </section>
 
-        {/* <section id="projects" className="min-h-screen scroll-mt-24">
+        <section id="projects" className="min-h-screen scroll-mt-24">
           <h1>Projects</h1>
         </section>
 
         <section id="contact" className="min-h-screen scroll-mt-24">
           <h1>Contact</h1>
         </section>
- */}
+
 
       </main>
 
@@ -120,3 +140,4 @@ export default function Home() {
     </>
   );
 }
+

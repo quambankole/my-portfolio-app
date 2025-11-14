@@ -24,12 +24,12 @@ export default function Home() {
 
       <main>
         <section
-          id="home"
+          id=""
           className="relative bg-white border border-red-600 flex items-center justify-center lg:h-[80vh] w-full overflow-hidden">
           {/* Background particles */}
           <Particles
             className="absolute"
-            quantity={70}
+            quantity={75}
             ease={0}
             color="#17ef54ff"
             refresh
@@ -123,11 +123,12 @@ export default function Home() {
 
         </section>
 
-        {/* #ABOUTSECTION */}
+        {/* #About Section */}
         <section id="about" className="lg:h-auto bg-black py-10 scroll-mt-21">
           <About/>
         </section>
 
+        {/* #Projects Section */}
         <section id="projects" className="lg:h-auto bg-white py-10 scroll-mt-24">
           <Projects/>
         </section>

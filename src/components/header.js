@@ -36,7 +36,9 @@ export default function Header() {
     return (
     <header className={`fixed top-0 left-0 w-full border-round border-solid z-50 bg-white/20 py-3 mt-0 shadow-sm backdrop-blur-sm shadow-lg backdrop-saturate-150 transition-colors duration-300 rounded-b-3xl ${isDarkSection ? 'text-white' : 'text-black'}`}>
     <div className="p-3 flex justify-between items-center max-w-7xl mx-auto">
-                <div className="text-xl align-right"><Link href="/"><span className="hover:text-green-400 transition-colors duration-150 ease-in-out">QUAM B</span></Link></div>
+                <div className="text-xl align-right">
+                    <a href="#"><span className="hover:text-green-400 transition-colors duration-150 ease-in-out">QUAM B</span></a>
+                </div>
 
                 <nav className={`${styles.navbar} ${navOpen ? styles.open : ''}`}>
                     <div className="flex space-x-2 text-2xl py-1 px-0 rounded-[0.25rem]">

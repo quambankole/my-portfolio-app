@@ -1,6 +1,8 @@
 'use client';
 
-import About from "./about/page";
+import About from "./about/aboutpage";
+import Projects from "./projects/projectspage";
+import Chatbot from "../components/chatbot";
 import styles from './page.module.css';
 import Header from "../components/header";
 import Links from "../components/links";
@@ -23,8 +25,7 @@ export default function Home() {
       <main>
         <section
           id="home"
-          className="relative bg-white border border-red-600 flex items-center justify-center lg:h-[80vh] w-full overflow-hidden"
-        >
+          className="relative bg-white border border-red-600 flex items-center justify-center lg:h-[80vh] w-full overflow-hidden">
           {/* Background particles */}
           <Particles
             className="absolute"
@@ -48,16 +49,18 @@ export default function Home() {
             </motion.h1>
           </div>
 
+          <Chatbot/>
+
           <div>
             <motion.h2
               ref={ref}
               initial={prefersReducedMotion ? false : { y: -25, opacity: 0 }}
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", bounce: 0.1, duration: 1.4 }}
-              className="lg:text-5xl lg:pb-2 lg:pl-6 lg:w-[49vw] sm:text-3xl md:w-[45vw] md:text-5xl uppercase text-black tracking-wider text-right"
+              className="2xl:text-8xl lg:text-6xl lg:pb-2 lg:w-[49vw] sm:text-3xl md:w-[45vw] md:text-5xl uppercase text-black tracking-normal text-right indent-1"
             >
               <WritingText
-                  text="I build modern web experiences"
+                  text="I Develop full-stack web apps"
                   inView={true}
                   transition={{
                     type: "spring",
@@ -88,7 +91,7 @@ export default function Home() {
                   className={`${styles.statusDot} inline-block w-2.5 h-2.5 bg-green-500 rounded-full`}
                   aria-hidden="true"
                 ></span>
-                <span className='font-b\old' >Available</span>
+                <span className='font-bold'>Available</span>
             </span>
           </div>
 
@@ -99,15 +102,15 @@ export default function Home() {
                   <li>
                     <Links />
                   </li>
-                  <li className="hover:scale-105 duration-200 ease-out">
-                    <a href="#resume" className={`${styles.cta} text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-colors ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400`}>
+                  <li className="hover:scale-105 duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-all ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 duration-2">
+                    <a href="#resume" className={``}>
                       Resumé
                     </a>
                   </li>
-                  <li className="sm:ml-auto hover:scale-105 duration-200 ease-out">
+                  <li className="ml-auto duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-white hover:text-black hover:bg-gray-100  transition-all ring-1 ring-white/20 bg-black backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400">
                     <a
                       href="#getintouch"
-                      className={`${styles.cta} text-base font-bold text-white rounded-xl hover:bg-black/10 hover:text-black transition-colors duration-300 ease-in-out border border-black/20 bg-black/90 backdrop-blur-md shadow-lg py-2 px-5 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-green-400`}>
+                      className={``}>
                       Get in touch
                     </a>
                   </li>
@@ -121,12 +124,12 @@ export default function Home() {
         </section>
 
         {/* #ABOUTSECTION */}
-        <section id="about" className="lg:h-auto bg-black py-10 scroll-mt-24">
+        <section id="about" className="lg:h-auto bg-black py-10 scroll-mt-21">
           <About/>
         </section>
 
-        <section id="projects" className="min-h-screen scroll-mt-24">
-          <h1>Projects</h1>
+        <section id="projects" className="lg:h-auto bg-white py-10 scroll-mt-24">
+          <Projects/>
         </section>
 
         <section id="contact" className="min-h-screen scroll-mt-24">

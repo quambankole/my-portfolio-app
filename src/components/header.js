@@ -41,9 +41,9 @@ export default function Header() {
                 <nav className={`${styles.navbar} ${navOpen ? styles.open : ''}`}>
                     <div className="flex space-x-2 text-2xl py-1 px-0 rounded-[0.25rem]">
                         <ul className={`flex lg:flex text-base lg:text-lg sm:text-sm/6 gap-3 lg:gap-10`}>
-                            <li><Link href="/#about"><span className="hover:text-green-400">About</span></Link></li>
-                            <li><Link href="/"><span className="hover:text-green-400">Projects</span></Link></li>
-                            <li><Link href="/"><span className="hover:text-green-400">Contact</span></Link></li>
+                            <li><a href="/#about"><span className="hover:text-green-400">About</span></a></li>
+                            <li><a href="/#projects"><span className="hover:text-green-400">Projects</span></a></li>
+                            <li><a href="/#contact"><span className="hover:text-green-400">Contact</span></a></li>
                         </ul>
                     </div>
                 </nav>

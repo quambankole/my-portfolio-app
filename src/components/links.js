@@ -73,7 +73,7 @@ return (
                         item.name === 'LinkedIn' ? faLinkedin :
                         faInstagram
                     }
-                    className="text-4xl"
+                    className="text-3xl"
                 />
             </a>
         ))}

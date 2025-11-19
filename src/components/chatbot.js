@@ -136,7 +136,7 @@ export default function PortfolioAskChatbot({
 
       {/* Panel */}
       {open && (
-        <div className="fixed bottom-20 right-5 w-[92vw] max-w-md h-[70vh] flex flex-col bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="z-35 fixed bottom-20 right-5 w-[92vw] max-w-md h-[70vh] flex flex-col bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
           <div className={`px-4 py-3 ${accentClass} flex items-center justify-between`}>
             <div>
               <h3 className="text-base font-semibold">{title}</h3>

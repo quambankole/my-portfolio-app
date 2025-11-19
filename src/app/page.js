@@ -2,6 +2,7 @@
 
 import About from "./about/aboutpage";
 import Projects from "./projects/projectspage";
+import Contact from "./contact/contactpage";
 import Chatbot from "../components/chatbot";
 import styles from './page.module.css';
 import Header from "../components/header";
@@ -18,14 +19,15 @@ export default function Home() {
   const isInView = useInView(ref, { once: true });
   const prefersReducedMotion = useReducedMotion();
 
+
   return (
     <>
       <Header/>
 
-      <main>
+      <main >
         <section
           id=""
-          className="relative bg-white border border-red-600 flex items-center justify-center lg:h-[80vh] w-full overflow-hidden">
+          className="relative z-35 bg-white flex items-center justify-center lg:h-[85vh] w-full overflow-hidden ">
           {/* Background particles */}
           <Particles
             className="absolute"
@@ -35,7 +37,7 @@ export default function Home() {
             refresh
           />
 
-        <div className="absolute z-10 lg:mt-5 flex flex-col items-start space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
+        <div className="absolute lg:mt-5 flex flex-col items-start space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
 
           <div>
             <motion.h1
@@ -72,7 +74,7 @@ export default function Home() {
             </motion.h2>
           </div>
 
-          <div className="lg:border-b border-green-300 lg:border-solid flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-[49vw] md:w-[45vw] sm:w-full gap-2 md:text-[0.25rem] ">
+          <div className="lg:border-b border-emerald-400300 lg:border-solid flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-[49vw] md:w-[45vw] sm:w-full gap-2 md:text-[0.25rem] ">
 
 
             <span className="uppercase font-medium flex items-center gap-x-2 p-2 text-black backdrop-blur-lg border-black/10 bg-white/30 text-xs md:text-[10px] lg:text-sm">
@@ -88,7 +90,7 @@ export default function Home() {
             <span className="uppercase font-medium flex items-center gap-x-2 p-2 text-black backdrop-blur-lg border-black/10 bg-white/30 text-xs md:text-[10px] lg:text-sm"
                 aria-label="Status: Open to work">
                 <span
-                  className={`${styles.statusDot} inline-block w-2.5 h-2.5 bg-green-500 rounded-full`}
+                  className={`${styles.statusDot} inline-block w-2.5 h-2.5 bg-emerald-400 rounded-full`}
                   aria-hidden="true"
                 ></span>
                 <span className='font-bold'>Available</span>
@@ -102,12 +104,12 @@ export default function Home() {
                   <li>
                     <Links />
                   </li>
-                  <li className="hover:scale-105 duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-all ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 duration-2">
+                  <li className="hover:scale-105 duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-black hover:text-emerald-400 transition-all ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 duration-2">
                     <a href="#resume" className={``}>
                       Resumé
                     </a>
                   </li>
-                  <li className="ml-auto duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-white hover:text-black hover:bg-gray-100  transition-all ring-1 ring-white/20 bg-black backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400">
+                  <li className="ml-auto duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-white hover:text-black hover:bg-gray-100  transition-all ring-1 ring-white/20 bg-black backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
                     <a
                       href="#getintouch"
                       className={``}>
@@ -120,28 +122,23 @@ export default function Home() {
           </div>
 
         </div>
-
         </section>
 
         {/* #About Section */}
-        <section id="about" className="lg:h-auto bg-black py-10 scroll-mt-21">
+        <section id="about" className="scroll-mt-26">
           <About/>
         </section>
 
         {/* #Projects Section */}
-        <section id="projects" className="lg:h-auto bg-white py-10 scroll-mt-24">
+        <section id="projects" className="scroll-mt-20">
           <Projects/>
         </section>
 
-        <section id="contact" className="min-h-screen scroll-mt-24">
-          <h1>Contact</h1>
+        <section id="contact" className="scroll-mt-10" >
+          <Contact />
         </section>
 
-
       </main>
-
-
     </>
   );
 }
-

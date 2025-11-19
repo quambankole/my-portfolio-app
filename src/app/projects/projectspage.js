@@ -11,6 +11,28 @@ const textInView = useInView(textRef, { once: true, margin: "-110px" });
 const listRef = useRef(null);
 const listInView = useInView(listRef, { once: true, margin: "-110px" });
 
+const projects = [
+    {
+    name: "1",
+    desc: "In progress",
+    progress: "In progress"
+    },
+    {
+    name: "2",
+    desc: "In progress",
+    progress: "In progress"
+    },
+    {
+    name: "3",
+    desc: "In progress",
+    progress: "In progress"
+    },
+    {
+    name: "4",
+    desc: "In progress",
+    progress: "In progress"
+    }
+];
 
 useEffect(() => {
     const onWheel = (e) => {
@@ -48,92 +70,57 @@ useEffect(() => {
 }, []);
 
 return (
-<main className="overscroll-contain  bg-white">
+<section className="pb-20 relative z-20 overscroll-contain bg-black">
     <section
-    id="about"
+    id="projects"
     role="region"
-    aria-labelledby="about-heading"
-    className="flex items-center justify-center w-full "
-    >
-    <div className="flex flex-col items-start space-y-3 max-w-screen-lg w-full lg:w-[50vw] mx-auto px-6">
+    aria-labelledby="projects-heading"
+    className="flex items-center mx-auto w-full ">
+        <div className="flex flex-col items-start space-y-3 max-w-screen-lg w-full lg:w-[65vw] mx-auto px-6">
         <motion.h1
-        id="about-heading"
-        className="lg:text-7xl indent-4 lg:my-8 md:text-5xl font-bold uppercase text-black mb-1 border-l-1 border-green-400 pl-2 text-right"
+        id="projects-heading"
+        className="lg:text-7xl indent-4 lg:my-6 md:text-5xl font-bold uppercase text-white mb-1 border-l-2 border-green-400"
         initial={{ opacity: 0, y: -5 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}>
+        transition={{ duration: 2, ease: "easeOut" }}>
         Projects
         </motion.h1>
 
-        <motion.p
-        ref={textRef}
-        className="lg:text-xl lg:mb-1 font-extralight text-justify text-black md:text-lg indent-6"
-        initial={{ opacity: 0, y: 40 }}
-        animate={textInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}>
-        I’m a Mechatronics Engineer who fell in love with how technology connects people and ideas. Now I bring that curiosity to the digital space, building modern, high-performing web experiences and exploring AI-driven systems.
-        </motion.p>
+<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 w-full ">
+    {projects.map((project) => (
+    <motion.div
+        key={project.name}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        className="relative w-full bg-white/10 backdrop-blur-lg border border-transparent ring-1 ring-white/30 rounded-xl shadow-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-102 hover:ring-green-400">
+        <img
+        src="/projects/default.png"
+        alt={project.name}
+        className="w-full h-52 object-cover"
+        />
+        <div className="p-2">
+        <h3 className="text-lg font-semibold text-white">
+            {project.name}
+        </h3>
+        <p className="text-white mt-2 text-sm">
+            {project.desc}
+        </p>
+        <div className="flex justify-between items-center mt-4">
+            <span className="text-xs text-white">
+            {project.progress}
+            </span>
+            <a className="text-green-500 hover:underline cursor-pointer">
+            View →
+            </a>
+        </div>
+        </div>
+    </motion.div>
+    ))}
+</div>
 
-        <motion.div
-        ref={listRef}
-        className="grid lg:grid-cols-1 gap-6 mt-8"
-        initial={{ opacity: 0, y: 50 }}
-        animate={listInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-        >
-        <div className="space-y-3 my-3">
-            <h2 className="text-2xl text-black font-bold uppercase tracking-wide">What I Do</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-gray-300 font-semibold text-lg text-left gap-1 mt-4 xl:gap-10">
-                {[
-                    { task: "Front‑End Development" },
-                    { task: "Back‑End Development" },
-                    { task: "APIs & Integrations" },
-                    { task: "UI/UX Design Systems" },
-                    { task: "Automation & IoT Systems" },
-                    { task: "Performance & Accessibility" }
-                ].map((item) => (
-                    <div
-                        key={item.task}
-                        className="text-center border border-gray-500 rounded-3xl cursor-pointer hover:bg-green-400 hover:text-black transition-all duration-300 ease-in-out w-full h-20 px-2 flex items-center justify-center mx-auto shadow-md hover:shadow-lg"
-                    >
-                        {item.task}
-                    </div>
-                ))}
-            </div>
-        </div>
-        <div className="space-y-3 my-3">
-            <h2 className="text-2xl font-bold text-black uppercase tracking-wider">Stack</h2>
-            <div className="grid lg:grid-cols-2 text-lg text-left gap-2">
-                {[
-                { label: "Front‑End:", list: "JS, Next.js, React, TypeScript" },
-                { label: "Back‑End:", list: "Node.js, Python, REST APIs" },
-                { label: "Databases:", list: "SQL (MySQL) & MongoDB" },
-                { label: "Version Control:", list: "Git & GitHub" },
-                { label: "Others:", list: "AI/agents (in progress)" },
-            ].map((item) => (
-            <div
-                key={item.label}
-                className="cursor-pointer font-light text-gray-300 hover:text-black transition-colors"
-                aria-label="Stack">
-                <span className="font-semibold">{item.label} </span>
-                {item.list}
-            </div>
-            ))}
-        </div>
-        </div>
-        </motion.div>
-
-        {/* <div className="mt-10">
-        <a
-            href="#projects"
-            className="inline-block border border-black/20 rounded-lg py-2 px-4 uppercase text-sm hover:text-green-600 bg-white/80 shadow-sm transition-colors"
-        >
-            View Projects
-        </a>
-        </div> */}
     </div>
     </section>
-</main>
+</section>
 );
 }
-

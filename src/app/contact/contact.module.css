@@ -1,0 +1,20 @@
+.parallaxcontact {
+  height: 100vh; /* makes it a full screen section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: red;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* <-- THIS gives parallax effect */
+
+  color: white;
+  padding: 2rem;
+}
+
+.content {
+  backdrop-filter: blur(4px);
+  padding: 2rem;
+  border-radius: 12px;
+}

@@ -79,7 +79,7 @@ return (
         <div className="flex flex-col items-start space-y-3 max-w-screen-lg w-full lg:w-[65vw] mx-auto px-6">
         <motion.h1
         id="projects-heading"
-        className="lg:text-7xl indent-4 lg:my-6 md:text-5xl font-bold uppercase text-white mb-1 border-l-2 border-green-400"
+        className="lg:text-7xl text-3xl indent-4 lg:my-6 md:text-5xl font-bold uppercase text-white mb-1 border-l-2 border-green-400"
         initial={{ opacity: 0, y: -5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2, ease: "easeOut" }}>

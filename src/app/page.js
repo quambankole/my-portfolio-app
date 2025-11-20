@@ -23,11 +23,6 @@ export default function Home() {
   return (
     <>
       <Header/>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
-      >
-      </a>
 
       <div id="main-content">
         <section
@@ -49,8 +44,7 @@ export default function Home() {
               className="lg:text-5xl lg:w-[49vw] md:text-3xl md:w-[45vw] sm:text-3xl sm:w-[60vw] w-[60vw] pl-6 md:pl-0 text-2xl font-light tracking-wider uppercase text-gray-300 text-left"
               initial={prefersReducedMotion ? false : { color: "#d7d9dbff", scale: 0.9, x: -60, opacity: 0 }}
               animate={isInView ? { color: "#282a2dff", x: -30, opacity: 1 } : {}}
-              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.9, ease: "easeOut" }}
-            >
+              transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.9, ease: "easeOut" }}>
               Hi, I’m Quam.
             </motion.h1>
           </div>
@@ -104,7 +98,7 @@ export default function Home() {
           <div className="lg:w-[49vw] w-[40vw] md:w-[45vw] sm:w-full flex flex-col items-start">
             <div className="flex flex-col gap-2 my-4 my-0 md:mx-0 flex-row items-center justify-between items-start w-full">
               <nav aria-label="Primary" className="flex w-full">
-                <ul className="flex w-full flex-col flex-row items-center space-y-0 space-x-5 sm:space-x-10 uppercase">
+                <ul className="flex w-full items-center space-x-5 sm:space-x-10 uppercase">
                   <li>
                     <Links />
                   </li>
@@ -113,7 +107,8 @@ export default function Home() {
                       href="#resume"
                       className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-9 w-11 h-9  md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
                                 transition-all duration-500 ease-out
-                                hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}>
+                                hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}
+                                >
                       Resumé
                     </a>
                   </li>

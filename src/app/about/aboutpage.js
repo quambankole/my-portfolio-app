@@ -115,7 +115,7 @@ return (
         className="mt-7"
     >
         <div className="rounded-3xl py-4 backdrop-blur-md text-white">
-        <h2 className="lg:text-4xl md:text-3xl sm:text-3xl font-bold mb-7 flex items-center gap-5 uppercase tracking-wide">
+        <h2 className="lg:text-4xl md:text-3xl text-2xl font-bold mb-7 flex items-center gap-5 uppercase tracking-wide">
             What I Do
         </h2>
 

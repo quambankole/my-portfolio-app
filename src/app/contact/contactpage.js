@@ -1,15 +1,15 @@
 'use client';
 import { AuroraBackground } from "../../components/ui/shadcn-io/aurora";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-function ContactCard({ title, description, links }) {
+function ContactCard({ title, links }) {
   return (
-    <div className="fixed bottom-20 z-10 w-[100vw] h-[90vh] backdrop-blur-lg text-center text-emerald-400 shadow-xl sm:h-[70vh]">
+    <div className="fixed bottom-20 z-10 w-[100vw] h-[80vh] backdrop-blur-lg text-center text-emerald-400 shadow-xl sm:h-[70vh]">
       <AuroraBackground />
-      <div className="  fixed top-[40%] left-1/2 -translate-x-1/2 z-10 w-[90%] max-w-xl  bg-gradient-to-b from-slate-950/80 via-slate-900 to-slate-950 p-10 border border-white rounded-2xl text-center text-white shadow-xl sm:fixed top-[10%]">
-      <div className="space-y-2">
-        <h2 className="text-xl md:text-4xl uppercase font-bold">{title}</h2>
-        <p className="opacity-80 text-sm md:text-base">{description}</p>
-      </div>
+      <div className="  fixed top-[40%] left-1/2 -translate-x-1/2 z-10 w-[90%] max-w-xl bg-gradient-to-b from-slate-950/80 via-slate-900 to-slate-950 p-10 border border-white rounded-2xl text-center text-white shadow-2xl shadow-emerald-400/40 drop-shadow-2xl sm:fixed top-[10%]">
+        <h2 className="text-2xl md:text-4xl my-2 py-2 uppercase font-bold">{title}</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {links.map((item, index) => (
@@ -18,11 +18,21 @@ function ContactCard({ title, description, links }) {
             href={item.href}
             target={item.newTab ? "_blank" : "_self"}
             rel={item.newTab ? "noopener noreferrer" : ""}
-            className="flex items-center justify-center gap-2 rounded-xl border border-emerald-400 bg-white/5 px-4 py-3 text-sm md:text-base font-medium hover:bg-white/10 hover:border-emerald-400 transition-all"
+            className="flex items-center justify-between w-full min-w-[180px] gap-4 rounded-xl border border-emerald-400 bg-white/5 px-4 py-3 text-sm md:text-base font-medium hover:bg-white/10 hover:border-emerald-400 transition-all"
           >
-            <span className={`w-2 h-2 rounded-full ${item.color}`} />
-            {item.label}
+            <span className="text-left flex-1">{item.label}</span>
+            <FontAwesomeIcon
+              icon={
+                  item.label === 'Email' ? faEnvelope :
+                  item.label === 'GitHub' ? faGithub :
+                  item.label === 'LinkedIn' ? faLinkedin :
+                  item.label === 'Instagram' ? faInstagram :
+                  faEnvelope
+              }
+              className="text-2xl"
+          />
           </a>
+
         ))}
         </div>
       </div>
@@ -34,17 +44,17 @@ export default function Contact() {
 
   return (
     <section
-      className="relative min-h-[75vh] flex justify-center items-center bg-neutral-100">
+      className="relative min-h-[70vh] flex justify-center items-center bg-neutral-100">
 
       <ContactCard
         title="Contact Me"
-        description="Let's talk about your project or connect with me online."
         links={[
-          { label: "Email", href: "mailto:your.email@example.com", color: "bg-emerald-400" },
-          { label: "Instagram", href: "https://instagram.com/yourhandle", color: "bg-pink-500", newTab: true },
-          { label: "LinkedIn", href: "https://linkedin.com/in/yourprofile", color: "bg-sky-500", newTab: true },
-          { label: "GitHub", href: "https://github.com/yourusername", color: "bg-gray-200", newTab: true }
+          { label: "Email", href: "mailto:your.quambankole9@gmail.com", },
+          { label: "Instagram", href: "https://instagram.com/quamldn", newTab: true },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/quam-bankole/", newTab: true },
+          { label: "GitHub", href: "https://github.com/quambankole",  newTab: true }
         ]}
+
       />
     </section>
   );

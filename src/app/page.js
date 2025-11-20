@@ -84,14 +84,14 @@ export default function Home() {
                 <span>Toronto, Canada.</span>
             </span>
 
-
-            <span className="uppercase font-medium flex items-center gap-x-2 p-2 text-black backdrop-blur-lg border-black/10 bg-white/30 text-xs md:text-[10px] lg:text-sm"
-                aria-label="Status: Open to work">
-                <span
-                  className={`${styles.statusDot} inline-block w-2.5 h-2.5 bg-emerald-400 rounded-full`}
-                  aria-hidden="true"
-                ></span>
-                <span className='text-slate-900 font-bold'>Available</span>
+            <span
+              className="uppercase font-medium flex items-center gap-x-2 p-2 text-black backdrop-blur-lg border-black/10 bg-white/30 text-xs md:text-[10px] lg:text-sm"
+              aria-label="Status: Available">
+              <span
+                className={`${styles.statusDot} inline-block w-2.5 h-2.5 bg-emerald-400 rounded-full`}
+                aria-hidden="true"
+              ></span>
+              <span className="text-slate-900 font-bold">Available</span>
             </span>
           </div>
 

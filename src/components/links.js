@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import styles from './links.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Links() {
@@ -57,9 +58,9 @@ return (
         aria-label="Social Links"
     >
         {[
-            { label: "Code", name: "GitHub", href: "https://github.com/" },
-            { label: "Network", name: "LinkedIn", href: "https://linkedin.com/" },
-            { label: "Social", name: "Instagram", href: "https://instagram.com/" },
+            { label: "Code", name: "GitHub", href: "https://github.com/quambankole" },
+            { label: "Network", name: "LinkedIn", href: "https://www.linkedin.com/in/quam-bankole/" },
+            { label: "Social", name: "Instagram", href: "https://instagram.com/quamldn" },
         ].map((item) => (
             <a
                 key={item.name}
@@ -70,9 +71,11 @@ return (
             >
                 <FontAwesomeIcon
                     icon={
-                        item.name === 'GitHub' ? faGithub :
-                        item.name === 'LinkedIn' ? faLinkedin :
-                        faInstagram
+                        item.label === 'Email' ? faEnvelope :
+                        item.label === 'GitHub' ? faGithub :
+                        item.label === 'LinkedIn' ? faLinkedin :
+                        item.label === 'Instagram' ? faInstagram :
+                        faEnvelope
                     }
                     className="text-3xl"
                 />

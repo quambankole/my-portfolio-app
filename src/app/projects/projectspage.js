@@ -95,7 +95,7 @@ return (
         transition={{ duration: 0.4 }}
         className="relative w-full bg-white/10 backdrop-blur-lg border border-transparent ring-1 ring-white/30 rounded-xl shadow-lg overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-102 hover:ring-green-400">
         <img
-        src="/projects/default.png"
+        src="#"
         alt={project.name}
         className="w-full h-52 object-cover"
         />

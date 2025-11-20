@@ -24,7 +24,7 @@ export default function Home() {
     <>
       <Header/>
 
-      <div id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <section
           className="relative z-35 bg-neutral-100 flex items-center justify-center lg:h-[85vh] h-[82vh] md:h-[85vh] p-[10vw] overflow-hidden">
           {/* Background particles (decorative) */}
@@ -95,36 +95,34 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="lg:w-[49vw] w-[40vw] md:w-[45vw] sm:w-full flex flex-col items-start">
-            <div className="flex flex-col gap-2 my-4 my-0 md:mx-0 flex-row items-center justify-between items-start w-full">
-              <nav aria-label="Primary" className="flex w-full">
-                <ul className="flex w-full items-center space-x-5 sm:space-x-10 uppercase">
-                  <li>
-                    <Links />
-                  </li>
-                  <li className="duration-200 ease-out text-base">
-                    <a
-                      href="#resume"
-                      className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-9 w-11 h-9  md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
-                                transition-all duration-500 ease-out
-                                hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}
-                                >
-                      Resumé
-                    </a>
-                  </li>
-                  <li className="ml-auto duration-200 ease-out text-base">
-                    <a
-                      href="#contact"
-                      className={`flex font-medium items-center justify-center mx-auto p-3 w-35 h-10 rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
-                                  transition-all duration-500 ease-out text-sm md:text-l
-                                  hover:bg-white hover:text-slate-900 hover:font-medium hover:border-slate-900`}
-                    >
-                      Get in touch
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+          <div className="flex flex-row items-center justify-between gap-2 my-0 md:mx-0 w-full">
+            <nav aria-label="Primary" className="flex w-full">
+              <ul className="flex w-full items-center space-x-5 sm:space-x-10 uppercase">
+                <li>
+                  <Links />
+                </li>
+                <li className="duration-200 ease-out text-base">
+                  <a
+                    href="#resume"
+                    className={`flex uppercase font-medium items-center justify-center text-sm md:text-lg px-9 h-9 md:px-10 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+                              transition-all duration-500 ease-out
+                              hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}
+                              >
+                    Resumé
+                  </a>
+                </li>
+                <li className="ml-auto duration-200 ease-out text-base">
+                  <a
+                    href="#contact"
+                    className={`flex font-medium items-center justify-center mx-auto p-3 h-10 rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
+                                transition-all duration-500 ease-out text-sm md:text-lg
+                                hover:bg-white hover:text-slate-900 hover:font-medium hover:border-slate-900`}
+                  >
+                    Get in touch
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
 
         </div>
@@ -144,7 +142,7 @@ export default function Home() {
           <Contact />
         </section>
 
-      </div>
+      </main>
     </>
   );
 }

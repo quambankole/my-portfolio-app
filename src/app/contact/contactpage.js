@@ -3,11 +3,11 @@ import { AuroraBackground } from "../../components/ui/shadcn-io/aurora";
 
 function ContactCard({ title, description, links }) {
   return (
-    <div className="fixed bottom-0 z-10 w-[100vw] h-[90vh] backdrop-blur-lg text-center text-emerald-400 shadow-xl">
-      <AuroraBackground speed="0.3s"/>
-      <div className="fixed top-[40%] left-1/2 -translate-x-1/2 z-10 w-[90%] max-w-xl  bg-gradient-to-b from-slate-950/80 via-slate-900 to-slate-950 p-10 border border-white rounded-2xl text-center text-white shadow-xl">
+    <div className="fixed bottom-0 sm:bottom-25 md:bottom-20 z-10 w-[100vw] h-[90vh] backdrop-blur-lg text-center text-emerald-400 shadow-xl sm:h-[70vh]">
+      <AuroraBackground />
+      <div className="  fixed top-[40%] left-1/2 -translate-x-1/2 z-10 w-[90%] max-w-xl  bg-gradient-to-b from-slate-950/80 via-slate-900 to-slate-950 p-10 border border-white rounded-2xl text-center text-white shadow-xl sm:fixed top-[10%]">
       <div className="space-y-2">
-        <h2 className="text-xl md:text-4xl font-bold">{title}</h2>
+        <h2 className="text-xl md:text-4xl uppercase font-bold">{title}</h2>
         <p className="opacity-80 text-sm md:text-base">{description}</p>
       </div>
 

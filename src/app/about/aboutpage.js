@@ -72,7 +72,7 @@ return (
     <div className="flex flex-col items-start space-y-3 max-w-screen-lg w-full lg:w-[65vw] mx-auto px-6">
         <motion.h1
         id="about-heading"
-        className="lg:text-7xl indent-4 lg:my-5 md:text-5xl font-bold uppercase text-white mb-1 border-l-1 border-emerald-400 pl-2"
+        className="lg:text-6xl md:4xl indent-4 lg:my-5 md:text-5xl font-bold uppercase text-white mb-1 border-l-1 border-emerald-400 pl-2"
         initial={{ opacity: 0, y: -5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}>
@@ -115,7 +115,7 @@ return (
         className="mt-7"
     >
         <div className="rounded-3xl py-4 backdrop-blur-md text-white">
-        <h2 className="text-4xl md:text-5xl font-bold mb-7 flex items-center gap-5 uppercase tracking-wide">
+        <h2 className="lg:text-4xl md:text-3xl sm:text-3xl font-bold mb-7 flex items-center gap-5 uppercase tracking-wide">
             What I Do
         </h2>
 

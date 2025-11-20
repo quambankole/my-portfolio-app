@@ -71,11 +71,10 @@ return (
             >
                 <FontAwesomeIcon
                     icon={
-                        item.label === 'Email' ? faEnvelope :
                         item.label === 'GitHub' ? faGithub :
                         item.label === 'LinkedIn' ? faLinkedin :
-                        item.label === 'Instagram' ? faInstagram :
-                        faEnvelope
+                        faInstagram
+
                     }
                     className="text-3xl"
                 />

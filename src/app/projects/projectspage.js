@@ -70,7 +70,7 @@ useEffect(() => {
 }, []);
 
 return (
-<section className="pb-20 relative z-20 overscroll-contain bg-black">
+<section className="pb-20 rounded-b-xl relative z-20 overscroll-contain bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
     <section
     id="projects"
     role="region"

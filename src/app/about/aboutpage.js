@@ -9,7 +9,7 @@ return (
     {items.map((tech, index) => (
     <span
         key={index}
-        className="border border-emerald-400  rounded-xl px-1 py-2 text-center"
+        className="border border-white/20 rounded-xl px-1 py-2 text-center"
     >
         {tech}
     </span>
@@ -62,7 +62,7 @@ useEffect(() => {
 }, []);
 
 return (
-<section className="relative py-5 z-20 overscroll-contain bg-black gradient-">
+<section className="relative py-5 z-20 overscroll-contain bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 gradient-">
     <section
     id="about"
     role="region"

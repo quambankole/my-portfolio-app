@@ -64,5 +64,12 @@ export function Particles({ quantity = 100, ease = 80, color = "#ffffff", refres
     return () => window.removeEventListener('resize', resize)
   }, [quantity, color, refresh])
 
-  return <canvas ref={canvasRef} className={className} />
+  return (
+    <canvas
+      ref={canvasRef}
+      className={className}
+      aria-hidden="true"
+      role="presentation"
+    />
+  )
 }

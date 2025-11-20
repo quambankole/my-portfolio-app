@@ -39,8 +39,9 @@ return (
     <button
     type="button"
     onClick={toggleLinks}
-    className="text-base border border-black/20 font-medium rounded-xl text-black hover:text-green-600 transition-all ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 duration-2"
-    >
+    className={`flex uppercase font-medium items-center justify-center px-10 w-20 h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+            transition-all duration-500 ease-out
+            hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}>
     Links
     </button>
 
@@ -52,7 +53,7 @@ return (
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -10, scale: 0.95 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className={`${styles.links} absolute mt-1 flex flex-row text-black gap-2 p-3 z-50 min-w-auto`}
+        className={`${styles.links} absolute mt-1 flex flex-row text-slate-900 gap-2 p-3 z-50 min-w-auto`}
         aria-label="Social Links"
     >
         {[
@@ -65,7 +66,7 @@ return (
                 href={item.href}
                 target={item.href.startsWith("mailto") ? "_self" : "_blank"}
                 rel="noreferrer"
-                className="flex items-center justify-center w-12 h-12 gap-3 rounded-xl border border-black/10 bg-white shadow-sm hover:shadow-md hover:-translate-y-1.5 hover:ease-in-out hover:border-green-400 transition-transform transition-shadow duration-300"
+                className="flex items-center justify-center w-12 h-12 gap-3 rounded-xl border border-black/10 bg-white shadow-sm hover:shadow-md hover:-translate-y-1 hover:ease-in-out hover:border-slate-900 transition-transform transition-shadow duration-300"
             >
                 <FontAwesomeIcon
                     icon={

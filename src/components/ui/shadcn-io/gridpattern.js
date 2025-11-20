@@ -1,12 +1,14 @@
 "use client";;
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 import React from "react";
-import { cn } from "@repo/shadcn-ui/lib/utils";
 
 export function GridPattern({
-  width = 40,
-  height = 40,
-  x = -1,
-  y = -1,
+  width = 80,
+  height = 80,
+  x = -2,
+  y = -2,
   strokeDasharray = "0",
   squares,
   className,
@@ -18,7 +20,7 @@ export function GridPattern({
     <svg
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/30",
+        "pointer-events-none absolute inset-0 h-full w-full fill-gray-900/30 stroke-emerald-400/30",
         className
       )}
       {...props}>

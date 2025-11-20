@@ -23,19 +23,24 @@ export default function Home() {
   return (
     <>
       <Header/>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
 
-      <main >
+      <main id="main-content">
         <section
-          id=""
-          className="relative z-35 bg-white flex items-center justify-center lg:h-[85vh] w-full overflow-hidden ">
-          {/* Background particles */}
-          <Particles
-            className="absolute"
-            quantity={75}
-            ease={0}
-            color="#17ef54ff"
-            refresh
-          />
+          className="relative z-35 bg-neutral-100 flex items-center justify-center lg:h-[85vh] w-full overflow-hidden ">
+          {/* Background particles (decorative) */}
+            <Particles
+              className="absolute"
+              quantity={75}
+              ease={0}
+              color="#17ef54ff"
+              refresh
+            />
 
         <div className="absolute lg:mt-5 flex flex-col items-start space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-2">
 
@@ -59,7 +64,7 @@ export default function Home() {
               initial={prefersReducedMotion ? false : { y: -25, opacity: 0 }}
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={prefersReducedMotion ? { duration: 0 } : { type: "spring", bounce: 0.1, duration: 1.4 }}
-              className="2xl:text-8xl lg:text-6xl lg:pb-2 lg:w-[49vw] sm:text-3xl md:w-[45vw] md:text-5xl uppercase text-black tracking-normal text-right indent-1"
+              className="2xl:text-8xl lg:text-6xl lg:pb-2 lg:w-[49vw] sm:text-3xl md:w-[45vw] md:text-5xl uppercase text-slate-900 tracking-normal text-right indent-1"
             >
               <WritingText
                   text="I Develop full-stack web apps"
@@ -93,7 +98,7 @@ export default function Home() {
                   className={`${styles.statusDot} inline-block w-2.5 h-2.5 bg-emerald-400 rounded-full`}
                   aria-hidden="true"
                 ></span>
-                <span className='font-bold'>Available</span>
+                <span className='text-slate-900 font-bold'>Available</span>
             </span>
           </div>
 
@@ -104,15 +109,22 @@ export default function Home() {
                   <li>
                     <Links />
                   </li>
-                  <li className="hover:scale-105 duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-black hover:text-emerald-400 transition-all ring-1 ring-white/20 bg-white/50 backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 duration-2">
-                    <a href="#resume" className={``}>
+                  <li className="duration-200 ease-out text-base">
+                    <a
+                      href="#resume"
+                      className="flex uppercase font-medium items-center justify-center px-10 w-20 h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+                                transition-all duration-500 ease-out
+                                hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900" >
                       Resumé
                     </a>
                   </li>
-                  <li className="ml-auto duration-200 ease-out text-base border border-black/20 font-medium rounded-xl text-white hover:text-black hover:bg-gray-100  transition-all ring-1 ring-white/20 bg-black backdrop-blur-md shadow-lg py-2 px-3 uppercase transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400">
+                  <li className="ml-auto duration-200 ease-out text-base">
                     <a
-                      href="#getintouch"
-                      className={``}>
+                      href="#contact"
+                      className="flex font-medium items-center justify-center px-10 w-50 h-12 gap-3 rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
+                                  transition-all duration-500 ease-out
+                                  hover:bg-white hover:text-slate-900 hover:font-medium hover:border-slate-900"
+                    >
                       Get in touch
                     </a>
                   </li>
@@ -125,7 +137,7 @@ export default function Home() {
         </section>
 
         {/* #About Section */}
-        <section id="about" className="scroll-mt-26">
+        <section id="about" className="scroll-mt-22">
           <About/>
         </section>
 

@@ -39,8 +39,8 @@ return (
     <button
     type="button"
     onClick={toggleLinks}
-    className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-10 w-15 h-10 md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
-                transition-all duration-500 ease-out
+    className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-8 w-11 h-9 md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+                transition-all duration-500 ease-out text-sm
                 hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}>
     Links
     </button>

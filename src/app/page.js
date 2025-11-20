@@ -29,9 +29,9 @@ export default function Home() {
       >
       </a>
 
-      <main id="main-content">
+      <div id="main-content">
         <section
-          className="relative z-35 bg-neutral-100 flex items-center justify-center lg:h-[85vh] h-[90vh] md:h-[85vh] w-full overflow-hidden ">
+          className="relative z-35 bg-neutral-100 flex items-center justify-center lg:h-[85vh] h-[82vh] md:h-[85vh] p-[10vw] overflow-hidden">
           {/* Background particles (decorative) */}
             <Particles
               className="relative"
@@ -41,7 +41,7 @@ export default function Home() {
               refresh
             />
 
-        <div className="absolute lg:mt-5 md:mt-2 flex flex-col items-start space-y-7  md:space-y-5 max-w-screen-lg lg:w-[49vw] mx-auto md:py-0">
+        <div className="absolute lg:mt-5 md:mt-2 flex flex-col items-start space-y-7  md:space-y-5 max-w-screen-lg lg:w-[49vw] mx-[7.5vw] md:py-0">
 
           <div>
             <motion.h1
@@ -111,7 +111,7 @@ export default function Home() {
                   <li className="duration-200 ease-out text-base">
                     <a
                       href="#resume"
-                      className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-10 w-15 h-10 md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+                      className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-9 w-11 h-9  md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
                                 transition-all duration-500 ease-out
                                 hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}>
                       Resumé
@@ -120,8 +120,8 @@ export default function Home() {
                   <li className="ml-auto duration-200 ease-out text-base">
                     <a
                       href="#contact"
-                      className={`flex font-medium items-center justify-center mx-auto p-2 w-45 h-12 rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
-                                  transition-all duration-500 ease-out
+                      className={`flex font-medium items-center justify-center mx-auto p-3 w-35 h-10 rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
+                                  transition-all duration-500 ease-out text-sm md:text-l
                                   hover:bg-white hover:text-slate-900 hover:font-medium hover:border-slate-900`}
                     >
                       Get in touch
@@ -149,7 +149,7 @@ export default function Home() {
           <Contact />
         </section>
 
-      </main>
+      </div>
     </>
   );
 }

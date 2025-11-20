@@ -72,7 +72,7 @@ return (
     <div className="flex flex-col items-start space-y-3 max-w-screen-lg w-full lg:w-[65vw] mx-auto px-6">
         <motion.h1
         id="about-heading"
-        className="lg:text-6xl md:4xl indent-4 lg:my-5 md:text-5xl font-bold uppercase text-white mb-1 border-l-1 border-emerald-400 pl-2"
+        className="lg:text-6xl md:text-4xl text-3xl indent-4 lg:my-5 md:text-5xl font-bold uppercase text-white mb-1 border-l-1 border-emerald-400 pl-2"
         initial={{ opacity: 0, y: -5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}>
@@ -83,7 +83,7 @@ return (
           {/* About text */}
         <motion.p
             ref={textRef}
-            className="lg:text-[1.35rem] md:text-lg font-normal text-justify text-white indent-10 p-6"
+            className="lg:text-[1.35rem] md:text-lg text-md font-normal text-justify text-white indent-10 p-2"
             initial={{ opacity: 0, y: 40 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}

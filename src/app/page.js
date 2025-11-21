@@ -25,23 +25,24 @@ export default function Home() {
       <Header/>
 
       <main id="main-content" tabIndex={-1}>
+
         <section
-          className="relative z-35 bg-neutral-100 flex items-center justify-center lg:h-[85vh] h-[82vh] md:h-[85vh] p-[10vw] overflow-hidden">
+          className="relative z-35 bg-neutral-100 flex items-center justify-center lg:h-[85vh] h-[80vh] md:h-[85vh] p-[10vw] overflow-hidden">
           {/* Background particles (decorative) */}
             <Particles
               className="relative"
-              quantity={75}
+              quantity={65}
               ease={0}
               color="#17ef54ff"
               refresh
             />
 
-        <div className="absolute lg:mt-5 md:mt-2 flex flex-col items-start space-y-7  md:space-y-5 max-w-screen-lg lg:w-[49vw] mx-[7.5vw] md:py-0">
+        <div className="border border-red-500 absolute lg:mt-5 md:mt-2 flex flex-col items-start space-y-5 w-[78vw] md:space-y-7 max-w-screen-lg lg:w-[49vw] mx-[7.5vw] md:py-0">
 
           <div>
             <motion.h1
               ref={ref}
-              className="lg:text-5xl lg:w-[49vw] md:text-3xl md:w-[45vw] sm:text-3xl sm:w-[60vw] w-[60vw] pl-6 md:pl-0 text-2xl font-light tracking-wider uppercase text-gray-300 text-left"
+              className="lg:text-5xl lg:w-[49vw] md:text-3xl md:w-[45vw] sm:text-3xl sm:w-[60vw] w-auto pl-6 md:pl-0 text-2xl font-light tracking-wider uppercase text-gray-300 text-left"
               initial={prefersReducedMotion ? false : { color: "#d7d9dbff", scale: 0.9, x: -60, opacity: 0 }}
               animate={isInView ? { color: "#282a2dff", x: -30, opacity: 1 } : {}}
               transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.9, ease: "easeOut" }}>
@@ -97,14 +98,15 @@ export default function Home() {
 
           <div className="flex flex-row items-center justify-between gap-2 my-0 md:mx-0 w-full">
             <nav aria-label="Primary" className="flex w-full">
-              <ul className="flex w-full items-center space-x-5 sm:space-x-10 uppercase">
+              <ul className="flex w-full items-center space-x-2 md:space-x-5 sm:space-x-10 uppercase">
                 <li>
                   <Links />
                 </li>
+
                 <li className="duration-200 ease-out text-base">
                   <a
                     href="#resume"
-                    className={`flex uppercase font-medium items-center justify-center text-sm md:text-lg px-9 h-9 md:px-10 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+                    className={`flex uppercase font-medium items-center justify-center text-sm md:text-lg w-auto px-3 h-9 md:px-10 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
                               transition-all duration-500 ease-out
                               hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}
                               >
@@ -114,7 +116,7 @@ export default function Home() {
                 <li className="ml-auto duration-200 ease-out text-base">
                   <a
                     href="#contact"
-                    className={`flex font-medium items-center justify-center mx-auto p-3 h-10 rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
+                    className={`flex font-medium items-center justify-center p-2 h-10 w-auto rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
                                 transition-all duration-500 ease-out text-sm md:text-lg
                                 hover:bg-white hover:text-slate-900 hover:font-medium hover:border-slate-900`}
                   >

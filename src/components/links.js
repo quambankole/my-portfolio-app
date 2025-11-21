@@ -40,8 +40,8 @@ return (
     <button
     type="button"
     onClick={toggleLinks}
-    className={`flex uppercase font-medium items-center justify-center text-sm md:text-l px-8 w-11 h-9 md:px-10 md:w-20 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
-                transition-all duration-500 ease-out text-sm
+    className={`flex uppercase font-medium items-center justify-center text-sm md:text-lg w-auto px-3 h-9 md:px-10 md:h-12 gap-3 rounded-xl border border-slate-900 bg-white text-slate-900 shadow-sm
+                transition-all duration-500 ease-out
                 hover:bg-slate-900 hover:text-white hover:font-medium hover:border-slate-900`}>
     Links
     </button>
@@ -54,7 +54,7 @@ return (
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: -10, scale: 0.95 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className={`${styles.links} absolute mt-1 flex flex-row text-slate-900 gap-2 p-3 z-50 min-w-auto`}
+        className={`${styles.links} absolute mt-1 flex flex-row text-slate-900 gap-2 p-2 z-50 min-w-auto`}
         aria-label="Social Links"
     >
         {[
@@ -71,12 +71,12 @@ return (
             >
                 <FontAwesomeIcon
                     icon={
-                        item.label === 'GitHub' ? faGithub :
-                        item.label === 'LinkedIn' ? faLinkedin :
+                        item.name === 'GitHub' ? faGithub :
+                        item.name === 'LinkedIn' ? faLinkedin :
                         faInstagram
 
                     }
-                    className="text-3xl"
+                    className="text-2xl sm:text-3xl"
                 />
             </a>
         ))}

@@ -12,12 +12,27 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Particles } from "../components/ui/shadcn-io/particles"
 import { WritingText } from "../components/writing-text/index";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function Home() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const prefersReducedMotion = useReducedMotion();
+
+  const [particleQty, setParticleQty] = useState(65);
+
+    useEffect(() => {
+    const updateQty = () => {
+      if (window.innerWidth < 508) {
+        setParticleQty(35);
+      } else {
+        setParticleQty(65);
+      }
+    };
+    updateQty();
+    window.addEventListener("resize", updateQty);
+    return () => window.removeEventListener("resize", updateQty);
+  }, []);
 
 
   return (
@@ -31,13 +46,13 @@ export default function Home() {
           {/* Background particles (decorative) */}
             <Particles
               className="relative"
-              quantity={65}
+              quantity= {particleQty}
               ease={0}
               color="#17ef54ff"
               refresh
             />
 
-        <div className="border border-red-500 absolute lg:mt-5 md:mt-2 flex flex-col items-start space-y-5 w-[78vw] md:space-y-7 max-w-screen-lg lg:w-[49vw] mx-[7.5vw] md:py-0">
+        <div className="absolute lg:mt-5 md:mt-2 flex flex-col items-start space-y-5 w-[78vw] md:space-y-7 max-w-screen-lg lg:w-[49vw] mx-[7.5vw] md:py-0">
 
           <div>
             <motion.h1
@@ -116,8 +131,8 @@ export default function Home() {
                 <li className="ml-auto duration-200 ease-out text-base">
                   <a
                     href="#contact"
-                    className={`flex font-medium items-center justify-center p-2 h-10 w-auto rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
-                                transition-all duration-500 ease-out text-sm md:text-lg
+                    className={`flex font-medium items-center justify-center px-3 h-9 md:text-lg md:px-10 md:h-12 w-auto rounded-xl border border-black/10 bg-slate-900 text-white shadow-sm
+                                transition-all duration-500 ease-out text-sm
                                 hover:bg-white hover:text-slate-900 hover:font-medium hover:border-slate-900`}
                   >
                     Get in touch

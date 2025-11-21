@@ -83,7 +83,7 @@ return (
           {/* About text */}
         <motion.p
             ref={textRef}
-            className="lg:text-md md:text-lg text-md font-normal text-justify text-white indent-10 p-2"
+            className="md:text-[1.2rem] text-[0.85rem] font-normal text-justify text-white indent-10 p-2"
             initial={{ opacity: 0, y: 40 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -98,8 +98,8 @@ return (
         initial={{ opacity: 0, y: 40 }}
         animate={textInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="py-10 px-6 border-l-1">
-            <motion.p className="text-emerald-400 text-3xl font-extrabold mb-1 -mt-10 py-4 pl-2">
+        className="py-15 px-6 border-l-1">
+            <motion.p className="text-emerald-400 text-4xl font-extrabold mb-1 -mt-2 py-4 pl-2">
                 STACK
             </motion.p>
 

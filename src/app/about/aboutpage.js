@@ -83,13 +83,14 @@ return (
           {/* About text */}
         <motion.p
             ref={textRef}
-            className="lg:text-[1.35rem] md:text-lg text-md font-normal text-justify text-white indent-10 p-2"
+            className="lg:text-md md:text-lg text-md font-normal text-justify text-white indent-10 p-2"
             initial={{ opacity: 0, y: 40 }}
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            I turn ideas into high-performing digital experiences. Starting as a Mechatronics Engineer, I've evolved into a full-stack developer who bridges hardware, software, and AI to build solutions that work in the real world.
-        </motion.p>
+            I'm a Mechatronics Engineering graduate with a Web Development diploma, now transitioning into software development and AI engineering. I built Arduino projects and developed web scraping automation tools, discovering that code offered the perfect blend of engineering precision and creative problem-solving.
+            Now I'm focused on full-stack development and diving into GenAI and Agentic AI. This portfolio documents my journey toward mastering AI engineering. Outside tech, I'm into sports, cooking, and creative direction.
+            </motion.p>
 
           {/* Stack Section */}
         <motion.div
@@ -102,7 +103,7 @@ return (
                 STACK
             </motion.p>
 
-            <StackGrid items={["React", "Next.js", "JS(ES6+)", "TypeScript", "Node.js", "Python"]} />
+            <StackGrid items={[ "JS(ES6+)", "React", "Next.js", "TypeScript", "Node.js", "Python"]} />
             </motion.div>
         </div>
 

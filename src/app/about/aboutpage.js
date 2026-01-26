@@ -4,18 +4,19 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react"
 
 function StackGrid({ items = [] }) {
-return (
-<div className="grid grid-cols-3 md:grid-cols-3 gap-4 bg-black/5 border-white/10 rounded-2xl backdrop-blur-md text-white/90 text-sm md:text-base">
-    {items.map((tech, index) => (
-    <span
-        key={index}
-        className="border border-white/20 rounded-xl px-1 py-2 text-center"
-    >
-        {tech}
-    </span>
-    ))}
-</div>
-);
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 bg-black/5 border border-white/10 rounded-2xl backdrop-blur-md text-white/90 text-sm md:text-base">
+      {items.map((tech, index) => (
+        <span
+          key={index}
+          className="border border-white/20 rounded-xl px-3 py-2 text-center whitespace-nowrap truncate"
+          title={tech}
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  );
 }
 
 export default function About() {
@@ -107,7 +108,6 @@ return (
             </motion.div>
         </div>
 
-        {/* Improved WHAT I DO & STACK section */}
         <motion.div
         ref={listRef}
         initial={{ opacity: 0, y: 50 }}

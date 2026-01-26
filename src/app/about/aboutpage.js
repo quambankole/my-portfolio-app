@@ -104,7 +104,7 @@ return (
                 STACK
             </motion.p>
 
-            <StackGrid items={[ "JS(ES6+)", "React", "Next.js", "TypeScript", "Node.js", "Python"]} />
+            <StackGrid items={[ "JS(ES6)", "React", "Next.js", "TS", "Node.js", "Python"]} />
             </motion.div>
         </div>
 

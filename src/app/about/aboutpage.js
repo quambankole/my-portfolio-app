@@ -88,8 +88,8 @@ return (
             animate={textInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
-            I'm a Mechatronics Engineering graduate with a Web Development diploma, now transitioning into software development and AI engineering. I built Arduino projects and developed web scraping automation tools, discovering that code offered the perfect blend of engineering precision and creative problem-solving.
-            Now I'm focused on full-stack development and diving into GenAI and Agentic AI. This portfolio documents my journey toward mastering AI engineering. Outside tech, I'm into sports, cooking, and creative direction.
+            I'm a mechatronics engineer who switched to Full-stack development. These days I build web apps with React and JavaScript, and I'm teaching myself AI engineering on the side. Going from hardware to software changed how I think about code. It's not just logic and syntax, it's a way to solve problems creatively.
+            I care about building things that actually work in production, not just side projects that sit on my laptop. When I'm not coding, I'm usually playing sports, cooking something new, or working on creative projects.
             </motion.p>
 
           {/* Stack Section */}
